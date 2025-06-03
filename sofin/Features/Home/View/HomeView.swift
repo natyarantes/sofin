@@ -12,13 +12,26 @@ struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
     
     var body: some View {
-        VStack{
-            Text("Welcome to Sofin!")
-                .font(.largeTitle)
-                .padding()
+        VStack(alignment: .leading, spacing: 24) {
+            Text("Sofin")
+                .font(.system(size: 34, weight: .bold))
+                .foregroundColor(.accentColor)
             
-            Text("Home Screen")
-                .foregroundColor(.gray)
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Saldo Atual")
+                    .font(.system(size: 16))
+                    .foregroundColor(.gray)
+                
+                Text("R$ 5.200,00")
+                    .font(.system(size: 28, weight: .bold))
+                    .foregroundColor(.accentColor)
+            }
+            .padding()
+            .background(Color(.systemGray6))
+            .cornerRadius(12)
+            
+            Spacer()
         }
+        .padding()
     }
 }
