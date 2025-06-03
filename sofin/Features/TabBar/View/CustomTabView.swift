@@ -4,42 +4,48 @@
 //
 //  Created by Natália Arantes on 03/06/25.
 //
-
 import SwiftUI
 import UIKit
 
 struct CustomTabView: View {
-    
     let homeNav: UINavigationController
     let reportsNav: UINavigationController
     let onAddTap: () -> Void
-    
+
     @State private var selectedTab = 0
-    
+
     var body: some View {
-        TabView(selection: $selectedTab) {
-            UIViewControllerWrapper(controller: homeNav)
-                .tabItem {
-                    Label("Home", systemImage: "house.fill")
+        GeometryReader { geometry in
+            ZStack {
+                TabView(selection: $selectedTab) {
+                    UIViewControllerWrapper(controller: homeNav)
+                        .tabItem {
+                            Label("Home", systemImage: "house.fill")
+                        }
+                        .tag(0)
+
+                    UIViewControllerWrapper(controller: reportsNav)
+                        .tabItem {
+                            Label("Relatórios", systemImage: "chart.bar.fill")
+                        }
+                        .tag(1)
                 }
-                .tag(0)
-            Color.clear
-                .tabItem {
-                    Image(systemName: "plus.cicle.fill")
-                        .font(.system(size: 28))
+
+                // 🔘 Botão central flutuante
+                Button(action: {
+                    onAddTap()
+                }) {
+                    Image(systemName: "plus")
+                        .font(.system(size: 24, weight: .bold))
+                        .frame(width: 64, height: 64)
+                        .foregroundColor(.white)
+                        .background(Color.accentColor)
+                        .clipShape(Circle())
+                        .shadow(radius: 4)
                 }
-                .tag(1)
-            UIViewControllerWrapper(controller: reportsNav)
-                .tabItem {
-                    Label("Relatórios", systemImage: "chart.bar.fill")
-                }
-                .tag(2)
-        }
-        .onChange(of: selectedTab) { newValue in
-                if newValue == 1 {
-                onAddTap()
-                    selectedTab = 0
+                .position(x: geometry.size.width / 2, y: geometry.size.height - 38)
             }
+            .edgesIgnoringSafeArea(.bottom)
         }
     }
 }

@@ -10,8 +10,11 @@ import UIKit
 class BaseCoordinator: Coordinator {
     
     var navigationController: UINavigationController
+    var rootViewController: UIViewController {
+        navigationController
+    }
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController = UINavigationController()) {
         self.navigationController = navigationController
     }
     

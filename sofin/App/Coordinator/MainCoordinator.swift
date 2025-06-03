@@ -10,12 +10,11 @@ import UIKit
 final class MainCoordinator: BaseCoordinator {
     
     override func start() {
-        showHome()
+        showHomeTab()
     }
     
-    private func showHome() {
-        let homeCoordinator = HomeCoordinator(navigationController: navigationController)
-        homeCoordinator.start()
-//        append(coordinator: homeCoordinator)
+    private func showHomeTab() {
+        let tabCoordinator = MainTabCoordinator(navigationController: navigationController)
+        tabCoordinator.start()
     }
 }

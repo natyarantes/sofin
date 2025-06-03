@@ -28,6 +28,6 @@ final class MainTabCoordinator: BaseCoordinator {
         })
         
         let hostingController = UIHostingController(rootView: tabView)
-        navigationController.pushViewController(hostingController, animated: false)
+        navigationController.setViewControllers([hostingController], animated: false)
     }
 }
