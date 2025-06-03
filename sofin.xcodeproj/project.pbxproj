@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		122D7892C6961EC17FE2745D /* Pods_sofin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B67E5CE5E88276D92ED5FED /* Pods_sofin.framework */; };
-		2996C9EF2DEF72F2002A7DBF /* FinancialTransaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996C9ED2DEF72F2002A7DBF /* FinancialTransaction+CoreDataClass.swift */; };
-		2996C9F02DEF72F2002A7DBF /* FinancialTransaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996C9EE2DEF72F2002A7DBF /* FinancialTransaction+CoreDataProperties.swift */; };
+		29F727652DEF861000D180B0 /* sofin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29F727632DEF861000D180B0 /* sofin.xcdatamodeld */; };
+		29F7276F2DEF926200D180B0 /* FinancialTransaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7276D2DEF926200D180B0 /* FinancialTransaction+CoreDataClass.swift */; };
+		29F727702DEF926200D180B0 /* FinancialTransaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F7276E2DEF926200D180B0 /* FinancialTransaction+CoreDataProperties.swift */; };
 		6E1A5D5FCFECBA7B96822BF2 /* Pods_sofinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C853B855C6A176CEF37D3341 /* Pods_sofinTests.framework */; };
 		F1254C3C8008F2CE7DFD4F11 /* Pods_sofin_sofinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F599E98A15964CB289AED30 /* Pods_sofin_sofinUITests.framework */; };
 /* End PBXBuildFile section */
@@ -35,8 +36,9 @@
 		16C8D3C40353FE589C5669A2 /* Pods-sofin-sofinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sofin-sofinUITests.debug.xcconfig"; path = "Target Support Files/Pods-sofin-sofinUITests/Pods-sofin-sofinUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1B67E5CE5E88276D92ED5FED /* Pods_sofin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sofin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F599E98A15964CB289AED30 /* Pods_sofin_sofinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sofin_sofinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2996C9ED2DEF72F2002A7DBF /* FinancialTransaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FinancialTransaction+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2996C9EE2DEF72F2002A7DBF /* FinancialTransaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FinancialTransaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		29F727642DEF861000D180B0 /* sofin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sofin.xcdatamodel; sourceTree = "<group>"; };
+		29F7276D2DEF926200D180B0 /* FinancialTransaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FinancialTransaction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		29F7276E2DEF926200D180B0 /* FinancialTransaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FinancialTransaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		29FA14F22DE50C5900919C06 /* sofin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sofin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29FA15042DE50C5A00919C06 /* sofinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sofinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29FA150E2DE50C5A00919C06 /* sofinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sofinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,8 +112,9 @@
 		29FA14E92DE50C5900919C06 = {
 			isa = PBXGroup;
 			children = (
-				2996C9ED2DEF72F2002A7DBF /* FinancialTransaction+CoreDataClass.swift */,
-				2996C9EE2DEF72F2002A7DBF /* FinancialTransaction+CoreDataProperties.swift */,
+				29F7276D2DEF926200D180B0 /* FinancialTransaction+CoreDataClass.swift */,
+				29F7276E2DEF926200D180B0 /* FinancialTransaction+CoreDataProperties.swift */,
+				29F727632DEF861000D180B0 /* sofin.xcdatamodeld */,
 				29FA14F42DE50C5900919C06 /* sofin */,
 				29FA15072DE50C5A00919C06 /* sofinTests */,
 				29FA15112DE50C5A00919C06 /* sofinUITests */,
@@ -351,8 +354,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2996C9EF2DEF72F2002A7DBF /* FinancialTransaction+CoreDataClass.swift in Sources */,
-				2996C9F02DEF72F2002A7DBF /* FinancialTransaction+CoreDataProperties.swift in Sources */,
+				29F727652DEF861000D180B0 /* sofin.xcdatamodeld in Sources */,
+				29F7276F2DEF926200D180B0 /* FinancialTransaction+CoreDataClass.swift in Sources */,
+				29F727702DEF926200D180B0 /* FinancialTransaction+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,6 +685,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		29F727632DEF861000D180B0 /* sofin.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				29F727642DEF861000D180B0 /* sofin.xcdatamodel */,
+			);
+			currentVersion = 29F727642DEF861000D180B0 /* sofin.xcdatamodel */;
+			name = sofin.xcdatamodeld;
+			path = sofin/sofin.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 29FA14EA2DE50C5900919C06 /* Project object */;
 }

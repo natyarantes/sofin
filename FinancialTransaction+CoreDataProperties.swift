@@ -20,7 +20,7 @@ extension FinancialTransaction {
     @NSManaged public var title: String?
     @NSManaged public var amount: Double
     @NSManaged public var date: Date?
-    @NSManaged public var type: String?
+    @NSManaged public var transactionType: String?
 
 }
 
