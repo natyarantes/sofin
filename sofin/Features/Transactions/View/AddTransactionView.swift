@@ -11,6 +11,7 @@ import Foundation
 struct AddTransactionView: View {
     
     @ObservedObject var viewModel: AddTransactionViewModel
+    @Environment(\.managedObjectContext) var context
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -37,13 +38,20 @@ struct AddTransactionView: View {
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Salvar") {
-                        viewModel.saveTransaction()
+                        viewModel.saveTransaction(context: context)
                         dismiss()
                     }
                 }
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancelar") {
                         dismiss()
+                    }
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Label("Fechar", systemImage: "xmark")
                     }
                 }
             }
