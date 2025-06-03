@@ -16,6 +16,6 @@ final class MainCoordinator: BaseCoordinator {
     private func showHome() {
         let homeCoordinator = HomeCoordinator(navigationController: navigationController)
         homeCoordinator.start()
-        append(coordinator: homeCoordinator)
+//        append(coordinator: homeCoordinator)
     }
 }
