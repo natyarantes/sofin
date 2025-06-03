@@ -13,7 +13,7 @@ struct sofinApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CoordinatorView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

@@ -15,6 +15,6 @@ final class HomeCoordinator: BaseCoordinator {
         let view = HomeView(viewModel: viewModel)
         
         let hostingController = UIHostingController(rootView: view)
-        navigationController?.setViewControllers([hostingController], animated: false)
+        navigationController.setViewControllers([hostingController], animated: false)
     }
 }
