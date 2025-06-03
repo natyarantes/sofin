@@ -1,6 +1,6 @@
 //
 //  FinancialTransaction+CoreDataProperties.swift
-//  
+//  sofin
 //
 //  Created by Natália Arantes on 03/06/25.
 //
@@ -21,5 +21,9 @@ extension FinancialTransaction {
     @NSManaged public var amount: Double
     @NSManaged public var date: Date?
     @NSManaged public var type: String?
+
+}
+
+extension FinancialTransaction : Identifiable {
 
 }

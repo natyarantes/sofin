@@ -20,6 +20,9 @@ struct AddTransactionView: View {
                 Section(header: Text("Valor")) {
                     TextField("Ex: 150.00", text: $viewModel.amount)
                         .keyboardType(.decimalPad)
+                        .onChange(of: viewModel.amount) {
+                            viewModel.amount = viewModel.amount.replacingOccurrences(of: ",", with: ".")
+                            .filter { "0123456789.".contains($0)}}
                 }
                 
                 Section(header: Text("Descrição")) {
