@@ -9,9 +9,9 @@ import UIKit
 
 class BaseCoordinator: Coordinator {
     
-    var navigationController: UINavigationController?
+    var navigationController: UINavigationController
     
-    init(navigationController: UINavigationController? = nil) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
