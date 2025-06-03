@@ -1,0 +1,43 @@
+# Xcode
+DerivedData/
+*.xcworkspace
+*.xcuserstate
+*.xcuserdatad
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+
+# CocoaPods
+Pods/
+
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon?
+Icon?
+._*
+
+# Thumbnails
+ehthumbs.db
+Thumbs.db
+
+# Other system files
+.Spotlight-V100
+.Trashes
+.idea/
+*.swp
+*.lock
+*.bak
+*.tmp
+
+# Logs
+*.log
+
+# User-specific
+*.orig
+
+# Secrets or configs (se criar)
+.env
+*.xcconfig
