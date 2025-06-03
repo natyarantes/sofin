@@ -7,6 +7,19 @@
 
 import Foundation
 
-final class AddTransactionViewModel {
+final class AddTransactionViewModel: ObservableObject {
+    @Published var title: String = ""
+    @Published var amount: String = ""
+    @Published var type: TransactionType = .income
     
+    enum TransactionType: String, CaseIterable, Identifiable {
+        case income = "Entrada"
+        case expense = "Saída"
+        
+        var id: String { rawValue }
+    }
+    
+    func saveTransaction() {
+        print("💾 Recording transaction: \(type.rawValue) de \(amount) para \(title)")
+    }
 }
