@@ -8,30 +8,36 @@
 import SwiftUI
 
 struct TransactionRow: View {
-    let title: String
-    let value: String
-    let isExpense: Bool
-    let date: String
-    
+    let transaction: TransactionModel
+
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(title)
-                    .font(.body)
-                    .foregroundColor(.primary)
-                Text(date)
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Text(transaction.title)
+                    .font(.headline)
+                Spacer()
+                Text(transaction.date.formatted(date: .abbreviated, time: .omitted))
                     .font(.caption)
                     .foregroundColor(.gray)
             }
-            Spacer()
-            
-            Text(value)
-                .font(.body)
-                .fontWeight(.bold)
-                .foregroundColor(isExpense ? .red : .green)
+
+            HStack {
+                Text("R$ \(transaction.amount, specifier: "%.2f")")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(transaction.financialType == .income ? .green : .red)
+
+                Spacer()
+
+                Text(transaction.financialType == .income ? "Entrada" : "Saída")
+                    .font(.caption)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(transaction.financialType == .income ? Color.green.opacity(0.1) : Color.red.opacity(0.1))
+                    .cornerRadius(8)
+            }
         }
-        .padding()
-        .background(.backgroundCard)
-        .cornerRadius(12)
+        .padding(.vertical, 4)
     }
 }
+

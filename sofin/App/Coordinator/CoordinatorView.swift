@@ -10,7 +10,7 @@ import UIKit
 
 struct CoordinatorView: UIViewControllerRepresentable {
     
-    @Environment(\.managedObjectContext) var context
+    var context = PersistenceController.shared.container.viewContext
     
     func makeUIViewController(context: Context) -> UINavigationController {
         let navigationController = UINavigationController()

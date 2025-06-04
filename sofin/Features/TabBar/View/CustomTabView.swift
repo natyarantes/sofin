@@ -31,7 +31,6 @@ struct CustomTabView: View {
                         .tag(1)
                 }
 
-                // 🔘 Botão central flutuante
                 Button(action: {
                     onAddTap()
                 }) {
