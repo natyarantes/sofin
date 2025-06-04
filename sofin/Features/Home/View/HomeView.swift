@@ -14,12 +14,10 @@ struct HomeView: View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
-                    // Título
                     Text("Sofin")
                         .font(.system(size: 34, weight: .bold))
                         .foregroundColor(.accentColor)
 
-                    // Saldo atual
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Saldo Atual")
                             .font(.system(size: 16))
@@ -34,7 +32,6 @@ struct HomeView: View {
                     .background(Color("BackgroundCardColor"))
                     .cornerRadius(12)
 
-                    // Visão Geral
                     Text("Visão Geral")
                         .font(.headline)
 
@@ -52,7 +49,6 @@ struct HomeView: View {
                                      systemImage: "banknote.fill")
                     }
 
-                    // Últimas transações
                     Text("Últimas transações")
                         .font(.headline)
                         .padding(.top)

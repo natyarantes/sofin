@@ -10,10 +10,10 @@ import Foundation
 
 struct AddTransactionView: View {
     
-    @Environment(\.managedObjectContext) var context
     @Environment(\.dismiss) var dismiss
-
     @ObservedObject var viewModel: AddTransactionViewModel
+    
+    var context = PersistenceController.shared.container.viewContext
     
     var body: some View {
         NavigationView {
@@ -36,37 +36,6 @@ struct AddTransactionView: View {
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
-                }
-                Section(header: Text("Debug")) {
-                    Button("Verificar Contexto") {
-                        print("✅ Contexto recebido: \(context)")
-                        print("📍 Tem alterações pendentes? \(context.hasChanges)")
-                    }
-                }
-                Button("Forçar alteração") {
-                    let transaction = FinancialTransaction(context: context)
-                    transaction.id = UUID()
-                    transaction.title = "Teste forçado"
-                    transaction.amount = 99.99
-                    transaction.date = Date()
-                    transaction.transactionType = "income"
-                    
-                    context.insert(transaction) // 👈 força o Core Data a saber que é novo
-
-                    if context.hasChanges {
-                        do {
-                            print("ENTITY NAME: \(transaction.entity.name ?? "❌")")
-                            print("IS FAULT: \(transaction.isFault)")
-                            print("INSERTED: \(transaction.isInserted)")
-
-                            try context.save()
-                            print("✅ Salvou forçando alteração!")
-                        } catch {
-                            print("❌ Erro ao salvar (forçado): \(error)")
-                        }
-                    } else {
-                        print("⚠️ Ainda sem alterações, mesmo forçando")
-                    }
                 }
             }
             .navigationTitle("Nova transação")
