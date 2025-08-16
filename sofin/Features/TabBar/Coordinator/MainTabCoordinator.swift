@@ -13,9 +13,13 @@ final class MainTabCoordinator: BaseCoordinator {
     override func start() {
         let homeNav = UINavigationController()
         let reportsNav = UINavigationController()
+        let context = PersistenceController.shared.container.viewContext
         
         let homeCoordinator = HomeCoordinator(navigationController: homeNav)
-        let reportsCoordinator = ReportsCoordinator(navigationController: reportsNav)
+        let reportsCoordinator = ReportsCoordinator(
+                    navigationController: reportsNav,
+                    context: context
+                )
         
         homeCoordinator.start()
         reportsCoordinator.start()
